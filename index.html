@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,700&subset=greek,latin' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>Sozos Iordanou & Son</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/page.css" type="text/css" media="screen"/>
+
+    <script>
+        var end = new Date('10/02/2016 3:0 PM');
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+
+                clearInterval(timer);
+                document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+            document.getElementById('countdown').innerHTML = days + ' days - ';
+            document.getElementById('countdown').innerHTML += hours + ' hrs - ';
+            document.getElementById('countdown').innerHTML += minutes + ' mins ';
+        }
+
+        timer = setInterval(showRemaining, 1000);
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row" style="margin-top:30px;">
+        <div class="col-md-12"><img src="images/logo.png" alt="logo"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Sozos Iordanou & Son</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="margin: 50px 0px; font-size:50px;"><i class="fa fa-spinner fa-pulse fa-lg fa-fw"></i>New website
+                coming soon!</h1>
+            <div style="font-size: 30px; margin-bottom: 20px" id="countdown"></div>
+            <p><i class="fa fa-map-marker fa-lg"></i>Modestou Panteli 3 Street, 8020, Pafos, Cyprus</p>
+            <p><i class="fa fa-phone fa-lg"></i>(00357) 2694 6022</p>
+            <p><i class="fa fa-envelope fa-lg"></i><a href="mailto:info@sozos.eu">info@sozos.eu</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
